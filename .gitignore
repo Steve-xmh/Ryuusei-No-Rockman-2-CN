@@ -1,0 +1,10 @@
+_build/
+_rom/
+_temp/
+_workspace/
+target/
+rust-code.bin
+zig-code.bin
+
+*.exe
+*.dll

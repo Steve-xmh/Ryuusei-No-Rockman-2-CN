@@ -1,0 +1,8 @@
+[unstable]
+# build-std = ["core", "alloc"]
+# 发行构建需要去掉这个
+# build-std-features = ["panic_immediate_abort"]
+
+[build]
+# armv5te-none-eabi
+# thumbv5te-none-eabi

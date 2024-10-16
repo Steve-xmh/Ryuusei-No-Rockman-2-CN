@@ -1,0 +1,26 @@
+[workspace]
+resolver = "2"
+members = [
+    "./src/rust/arm9",
+    "./src/rust/tools",
+    "./src/rust/nitro-sys",
+    "./src/rust/nitro",
+]
+
+[profile.dev]
+# opt-level = "z"
+# rpath = false
+# lto = true
+# codegen-units = 1
+# panic = 'abort'
+# incremental = false
+
+[profile.release]
+opt-level = "s"
+debug = false
+rpath = false
+lto = true
+debug-assertions = true
+codegen-units = 1
+panic = 'abort'
+incremental = false

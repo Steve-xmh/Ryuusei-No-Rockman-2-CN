@@ -1,0 +1,51 @@
+[package]
+name = "tools"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "setup"
+path = "src/setup.rs"
+
+[[bin]]
+name = "pack"
+path = "src/pack.rs"
+
+[[bin]]
+name = "genfont"
+path = "src/genfont.rs"
+
+[[bin]]
+name = "compile"
+path = "src/compile.rs"
+
+[[bin]]
+name = "compile_zig"
+path = "src/compile_zig.rs"
+
+[[bin]]
+name = "gen_splash_screen"
+path = "src/gen_splash_screen.rs"
+
+[[bin]]
+name = "dump_images"
+path = "src/dump_images_cli.rs"
+
+[dependencies]
+nds = "0.2"
+anyhow = "1.0"
+sevenz-rust = "0.6"
+rscolorq = "0.2"
+image = { version = "0.25", no-default-features = true, features = [
+    "png",
+    "jpeg",
+] }
+md5 = "0.7.0"
+flips = "0.2.1"
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+# G:\Programs\rust\sfspatcher\sfont
+sfbase = { path = "../../../../../rust/sfspatcher/sfbase" }
+sfsprite = { path = "../../../../../rust/sfspatcher/sfsprite" }

@@ -1,0 +1,16 @@
+[package]
+name = "arm9"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+default = ["ninja"]
+ninja = []
+saurian = []
+
+[dependencies]
+nitro = { path = "../nitro" }
+arrayvec = { version = "^0.7", default-features = false, no-default-features = true }
+uluru = "3"
