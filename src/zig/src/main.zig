@@ -42,13 +42,18 @@ pub fn allocator() Allocator {
 extern "c" fn OS_Terminate() noreturn;
 
 pub fn fatal_error(msg: []const u8, err: anyerror) noreturn {
-    const err_name = @errorName(err);
-    println("--- FATAL ERROR ---");
-    println("An error from patch code occurred and the game cannot continue.");
-    print("Error Msg:  ");
-    println(msg);
-    print("Error Code: ");
-    println(err_name);
+    const builtin = @import("builtin");
+
+    if (comptime builtin.mode == .Debug) {
+        const err_name = @errorName(err);
+        println("--- FATAL ERROR ---");
+        println("An error from patch code occurred and the game cannot continue.");
+        print("Error Msg:  ");
+        println(msg);
+        print("Error Code: ");
+        println(err_name);
+    }
+
     OS_Terminate();
 }
 
